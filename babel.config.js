@@ -8,9 +8,11 @@ module.exports = function (api) {
         {
           root: ['./src'],
           alias: {
-            '@theme': './src/theme/index.ts',
-            '@components': './src/components/index.ts',
-            '@screens': './src/screens/index.ts',
+            '@theme': './src/theme',
+            '@components': './src/components',
+            '@screens': './src/screens',
+            '@utils': './src/utils',
+            '@storage': './src/storage',
           },
         },
       ],

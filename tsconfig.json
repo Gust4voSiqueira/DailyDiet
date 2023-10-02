@@ -5,13 +5,19 @@
     "baseUrl": "./",
     "paths": {
       "@theme/*": [
-        "./src/theme/index.ts"
+        "./src/theme/*"
       ],
       "@components/*": [
         "./src/components/*"
       ],
       "@screens/*": [
         "./src/screens/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@storage/*": [
+        "./src/storage/*"
       ],
     }
   }
