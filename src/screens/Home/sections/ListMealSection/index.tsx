@@ -1,4 +1,4 @@
-import { FlatList, Pressable, Text, View } from 'react-native'
+import { Pressable, ScrollView, Text, View } from 'react-native'
 import { styles } from './styles'
 import { useNavigation } from '@react-navigation/native'
 import { convertDateToHour, convertDateToString } from '@utils/convertDate'
@@ -28,34 +28,29 @@ export function ListMealSection({ meals }: IListMealSection) {
   return (
     <View style={styles.container}>
       <Text style={styles.dateText}>{convertDateToString(new Date(date))}</Text>
-
-      <FlatList
-        data={meals}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => (
+      <ScrollView style={styles.scrollViewContainer}>
+        {meals.map((meal) => (
           <Pressable
+            key={meal.id}
             style={styles.cardItemContainer}
-            onPress={() => handleDetailsMeal(item.id)}
+            onPress={() => handleDetailsMeal(meal.id)}
           >
             <Text style={styles.hourMeal}>
-              {convertDateToHour(new Date(item.date))}
+              {convertDateToHour(new Date(meal.date))}
             </Text>
             <Text
               numberOfLines={1}
               ellipsizeMode="tail"
               style={styles.descriptionMeal}
             >
-              {item.name}
+              {meal.name}
             </Text>
             <View
-              style={item.isDiet ? styles.isDietItem : styles.notIsDietItem}
+              style={meal.isDiet ? styles.isDietItem : styles.notIsDietItem}
             />
           </Pressable>
-        )}
-        showsVerticalScrollIndicator={false}
-        initialNumToRender={4}
-        style={{ maxHeight: 230 }}
-      />
+        ))}
+      </ScrollView>
     </View>
   )
 }

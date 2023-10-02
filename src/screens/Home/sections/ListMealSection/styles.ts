@@ -3,11 +3,20 @@ import { StyleSheet } from 'react-native'
 
 const { COLORS, FONT_FAMILY, FONT_SIZE } = theme
 
+const HEIGHT_CARD_MEAL = 50
+const LIMIT_MEAL_FOR_LIST = 4
+const MARGIN_MEAL = 8
+
 export const styles = StyleSheet.create({
   container: {
     marginTop: 20,
 
     paddingHorizontal: 20,
+  },
+  scrollViewContainer: {
+    maxHeight:
+      HEIGHT_CARD_MEAL * LIMIT_MEAL_FOR_LIST +
+      MARGIN_MEAL * LIMIT_MEAL_FOR_LIST,
   },
   dateText: {
     fontFamily: FONT_FAMILY.BOLD,
@@ -24,7 +33,8 @@ export const styles = StyleSheet.create({
     paddingVertical: 14,
     paddingLeft: 12,
     paddingRight: 16,
-    marginBottom: 8,
+    marginBottom: MARGIN_MEAL,
+    height: HEIGHT_CARD_MEAL,
 
     borderRadius: 6,
   },
