@@ -3,8 +3,12 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: theme.COLORS.GRAY_700,
+    marginTop: 30,
     paddingHorizontal: 20,
+  },
+  titleSection: {
+    fontFamily: theme.FONT_FAMILY.REGULAR,
+    fontSize: theme.FONT_SIZE.XSM,
+    marginBottom: 5,
   },
 })
