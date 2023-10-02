@@ -1,1 +1,6 @@
 export { Home } from './Home'
+export { GeneralStatistics } from './GeneralStatistics'
+export { NewMeal } from './NewMeal'
+export { CreatedMeal } from './CreatedMeal'
+export { EditMeal } from './EditMeal'
+export { MealDetails } from './MealDetails'
